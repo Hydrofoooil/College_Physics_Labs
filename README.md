@@ -21,7 +21,32 @@
    - Linux: `sudo apt-get install texlive-full` (Ubuntu/Debian) 或 `sudo yum install texlive-scheme-full` (CentOS/RHEL)
    - Windows: 下载并安装 [TeX Live](https://www.tug.org/texlive/)
 
-2. **安装 Python 依赖**
+2. **安装中文字体（SimSun）**
+
+   项目使用 SimSun（宋体）字体进行中文排版。请根据你的操作系统安装字体：
+
+   - **macOS**:
+
+     ```bash
+     # 将 SimSun.ttf 复制到系统字体目录
+     cp SimSun.ttf ~/Library/Fonts/
+     # 或者双击 SimSun.ttf 文件，点击"安装字体"
+     ```
+
+   - **Linux**:
+
+     ```bash
+     # 复制到用户字体目录
+     mkdir -p ~/.fonts
+     cp SimSun.ttf ~/.fonts/
+     fc-cache -fv  # 刷新字体缓存
+     ```
+
+   - **Windows**:
+     - 双击 `SimSun.ttf` 文件，点击"安装"按钮
+     - 或复制到 `C:\Windows\Fonts\` 目录
+
+3. **安装 Python 依赖**
 
    ```bash
    pip install -r requirements.txt
@@ -45,17 +70,21 @@
    cd College_Physics_Labs
    ```
 
-2. 安装 Python 依赖（如需运行绘图脚本）
+2. 安装中文字体（SimSun）
+
+   项目根目录下的 `SimSun.ttf` 需要安装到系统中，请参考上方"环境配置"部分的字体安装说明。
+
+3. 安装 Python 依赖（如需运行绘图脚本）
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. 使用 VSCode 打开项目（建议安装 `LaTeX Workshop` 插件）
+4. 使用 VSCode 打开项目（建议安装 `LaTeX Workshop` 插件）
 
-4. 打开对应的实验报告 `.tex` 文件，使用 LaTeX Workshop 编译生成 PDF
+5. 打开对应的实验报告 `.tex` 文件，使用 LaTeX Workshop 编译生成 PDF
 
-5. 如需运行 Python 绘图脚本：
+6. 如需运行 Python 绘图脚本：
    - 进入对应实验文件夹
    - 编辑 `plot.py` 文件，替换为你自己的数据
    - 运行 `python plot.py` 生成图表

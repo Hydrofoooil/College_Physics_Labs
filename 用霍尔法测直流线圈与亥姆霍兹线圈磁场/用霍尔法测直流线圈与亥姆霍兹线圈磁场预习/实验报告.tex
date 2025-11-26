@@ -1,0 +1,217 @@
+\documentclass[10pt,a4paper]{ctexart}
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}    % 提供方程环境
+\usepackage{physics}    % 简化向量、微分算子语法
+\newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}} %自定义空一行
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{booktabs} % 添加 booktabs 宏包
+\usepackage{subcaption}
+\pagestyle{fancy}
+\fancyhf{}  % 清除所有页眉页脚
+\fancyfoot[C]{\thepage}  % 在页脚中央设置页码
+\renewcommand{\headrulewidth}{0pt}  % 去掉页眉横线
+\renewcommand{\footrulewidth}{0pt}  % 去掉页脚横线
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{titlesec}
+
+% 重新定义section格式
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\chinese{section}、}
+  {0pt}
+  {}
+
+% 给出常用字号的自定义指令
+\newcommand{\chuhao}{\fontsize{42pt}{48pt}\selectfont}
+\newcommand{\xiaochu}{\fontsize{36pt}{42pt}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{21.6pt}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{20pt}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{18pt}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{18pt}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{16pt}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{12.6pt}\selectfont}
+
+% 定义中文数字转换
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\zhnum{section}、}  % 使用\zhnum而不是\chinese
+  {0pt}
+  {}
+
+% 标题设置
+\title{\xiaochu\textbf{物理实验预习报告}}
+\author{}
+\date{}
+
+\begin{document}
+
+\vspace*{36pt} % 顶部空白
+
+% 居中填写区域
+\begin{center}
+    \includegraphics[width = 9cm]{head.png}
+    
+    \xiaochu\textbf{物理实验预习报告}
+    % 预留空白区域
+    \vspace{13pt}
+    \vspace{13pt}
+    \vspace{13pt}
+    \vspace{13pt}
+    
+    \sanhao\textbf{实验名称：\underline{\makebox[11cm]{ 用霍尔法测直流线圈与亥姆霍兹线圈磁场 }}} \\[10pt]
+    \sanhao\textbf{实验桌号：\underline{\makebox[8cm]{  }}} \\[10pt]
+    \sanhao\textbf{指导教师：\underline{\makebox[8cm]{  }}} \\[20pt]
+    
+    % 预留空白区域
+    \myspace{7}
+    
+   \sihao\textbf{班级：\underline{\makebox[6cm]{cc98}}} \\[10pt]
+    \sihao\textbf{姓名：\underline{\makebox[6cm]{Hydrofoil}}} \\[10pt]
+    \sihao\textbf{学号：\underline{\makebox[6cm]{324010}}} \\[30pt]
+    
+   \sihao\textbf{实验日期: \underline{\makebox[0.8cm]{2025}}年 \underline{\makebox[0.4cm]{11}}月\underline{\makebox[0.4cm]{19}}日  星期\underline{\makebox[0.6cm]{三}}上午}
+    
+    \vspace{18pt}
+    \sihao 浙江大学物理实验教学中心
+    
+\end{center}
+
+\newpage
+
+
+    \section{实验综述}
+    
+    \xiaosi （自述实验现象、实验原理和实验方法，不超过500字，5分）
+    
+    \subsubsection*{载流圆线圈与亥姆霍兹线圈的磁场:}
+
+    \textbf{（1）载流圆线圈磁场}
+    \begin{align*}
+        B=\frac{\mu_{0} \cdot N_{0} \cdot I \cdot R^{2}}{2 \cdot(R^{2}+X^{2})^{\frac{3}{2}}}
+    \end{align*}
+    
+    式中\(N_0\)为圆线圈的匝数，X为轴上某一点到圆心$o'$的距离，\(\mu_0=4\pi×10^{-7} H/m\)，本实验取\(N_0=400\)，\(I=0.400 A\)，\(R=0.100 m\)，在$O'$处\(X=0\)，可计算得：\(B=1.0053×10^{-3} T\)
+    
+    其磁场的分布图是一条单峰的关于Y轴对称的曲线。
+    
+    \textbf{（2）亥姆霍兹线圈}
+
+    定义：两个完全相同的圆线圈彼此平行且共轴，通以同方向的电流I，线圈间距等于线圈半径R时，这样的一对线圈称为亥姆霍兹线圈。其磁场分布曲线在两线圈中心连线一段出现一个平台，说明此处为匀强磁场。
+
+    \begin{figure}[htbp]
+        \centering
+        % 第一张图片
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            % 替换为你的第一张文件名
+            \includegraphics[width=\textwidth]{载流圆线圈的磁场分布.png} 
+            \caption{载流圆线圈的磁场分布}
+            \label{fig:left}
+        \end{subfigure}
+        \hfill % 这是一个弹性空格，把两张图撑开
+        % 第二张图片
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            % 替换为你的第二张文件名
+            \includegraphics[width=\textwidth]{亥姆霍兹线圈的磁场分布.png}
+            \caption{亥姆霍兹线圈的磁场分布}
+            \label{fig:right}
+        \end{subfigure}
+        
+        \label{fig:both}
+    \end{figure}
+
+    \subsubsection*{ 利用霍尔效应测磁场的原理:}
+
+    \textbf{（1）霍尔效应}：若电流I流过厚度为d的矩形半导体薄片，且磁场B垂直作用于该半导体，由于洛伦兹力的作用，载流子会发生横向偏转，在两横向面a、b之间产生电势差，称为霍尔电势，其方向同时垂直于I与B方向。
+    
+    \textbf{（2）产生原理}：I通过元件时，空穴有一定漂移速度v，其垂直于B运动时，产生洛伦兹力\(F_B=q·(v×B)\)（q为电子电荷），洛伦兹力使电荷产生横向偏转，偏转的载流子在边界积累，产生横向电场E，直到\(F_E=F_B\)，即\(q·E=q·(v×B)\)。
+    
+    设P型样品的载流子浓度为p，宽度为w，厚度为d，通过样品的电流\(I_H=p·q·v·w·d\)，
+    则空穴的速度\(v=\frac{I_H}{p·q·w·d}\)，代回得\(E=|v×B|=\frac{I_H·B}{p·q·w·d}\)，两侧同乘w得
+    \begin{align*}
+        U_H=E·w=\frac{R_H·I_H·B}{d} \quad (R_H \text{称霍尔系数})
+    \end{align*}
+    
+    应用中一般令\(k_H=\frac{R_H}{d}=\frac{1}{p·q·d}\)，称为霍尔元件的灵敏度，灵敏度越大越好。
+    
+    由上式可知，若已知霍尔片的灵敏度\(k_H\)，只要分别测出霍尔电流\(I_H\)和霍尔电势差\(U_H\)，即可算出磁场B的大小，此即霍尔效应测场强的原理。
+
+    \subsubsection*{测量载流圆线圈轴线上磁场的分布：}
+
+    （1）正确连接 FB5 型霍尔法亥姆霍兹线圈磁场实验仪与测试架，校准微特斯拉计；
+
+    （2）测试架左边的线圈为固定线圈，固定在 0cm 处，把右边的可动线圈移到合适位置；
+
+    （3）使励磁电流\(I=0.400A\)，以圆电流线圈中心为坐标原点，每隔 1.0cm 测一个B值，保持励磁电流不变；
+
+    （4）记录数据，在方格纸上画出\(B-X\)曲线。
+
+    \subsubsection*{测量亥姆霍兹线圈轴线上磁场的分布：}
+
+    （1）移动线圈使两线圈间距\(d=R=10cm\)，此时两个圆线圈中心连线的几何中心距测试平面 5cm；
+
+    （2）将两圆电流线圈串联起来，接到磁场测试仪的输出端钮，调节电流输出，使励磁电流\(I=0.400A\)，以两个圆线圈中心连线上的中点为坐标原点，每隔 1.0cm 测一个B值；
+
+    （3）记录数据，在方格纸上画出相应的\(B-X\)曲线。
+
+    \subsubsection*{测量载流圆线圈沿 “径向” 的磁场分布：}
+
+    将传感器探头移动到一线圈中心，与线圈平面的夹角为 0°，径向移动探头，每移动 1.0cm 测量一个数据，按正反方向测到 6cm 为止，记录数据，作出磁场分$B-Y$曲线。
+   
+    
+    \section{实验重点}
+
+    \xiaosi（简述本实验的学习重点，不超过100字，3分）
+
+
+    \begin{enumerate}   
+        \item 了解用霍尔效应法测量磁场的原理，掌握 FB511 型霍尔法亥姆霍兹线圈磁场实验仪的使用方法；
+        \item 了解载流圆线圈的径向磁场分布情况；
+        \item 测量载流圆线圈和亥姆霍兹线圈的轴线上的磁场分布；
+        \item 两平行线圈的间距改变为\(d=\frac{1}{2} R\)及\(d=2R\)时，测定其轴线上的磁场分布。
+
+    \end{enumerate}   
+    
+    
+    \section{实验难点}
+    
+    \xiaosi（简述本实验的实现难点，不超过100字，2分）
+
+    \begin{enumerate}    
+        \item 需精准校准微特斯拉计，实验中测试架位置变动后需重新调零；
+        \item 霍尔传感器轴向、径向移动需精准控制，每 1cm 测一个数据，操作繁琐；
+        \item 磁场易受环境干扰，探头摆放方向偏差会导致测量误差；
+        \item 数据处理需绘制多组 B-X 曲线，需保证数据对称性以分析规律。
+    \end{enumerate}  \
+
+
+
+\newpage
+
+\sihao\textbf{注意事项：}
+\xiaosi
+\begin{enumerate}
+    \item  用 PDF 格式上传“实验报告”，文件名：学生姓名+学号+实验名称+周次。
+    \item  “实验报告”必须递交在“学在浙大”的本课程的对应实验项目的“作业”模块内。
+    \item  “实验报告”成绩必须在“浙江大学物理实验教学中心网站”-“选课系统”内查询。
+    \item 教学评价必须在“浙江大学物理实验教学中心网站”-“选课系统”内进行，学生必须进行教学评价，才能看到实验报告成绩，教学评价必须在本次实验结束后 3 天内进行。
+\end{enumerate}
+
+\vspace{1cm}
+\xiaosi\centering \textbf{浙江大学物理实验教学中心制}
+
+\end{document}

@@ -1,0 +1,231 @@
+\documentclass[10pt,a4paper]{ctexart}
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}    % 提供方程环境
+\usepackage{amssymb}    % 提供数学符号, 如 \therefore
+\usepackage{physics}    % 简化向量、微分算子语法
+\newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}} %自定义空一行
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{booktabs} % 添加 booktabs 宏包
+\usepackage{float} % 引入float宏包以使用[H]选项
+\pagestyle{fancy}
+\fancyhf{}  % 清除所有页眉页脚
+\fancyfoot[C]{\thepage}  % 在页脚中央设置页码
+\renewcommand{\headrulewidth}{0pt}  % 去掉页眉横线
+\renewcommand{\footrulewidth}{0pt}  % 去掉页脚横线
+
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{titlesec}
+
+% 重新定义section格式
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\chinese{section}、}
+  {0pt}
+  {}
+
+% 给出常用字号的自定义指令
+\newcommand{\chuhao}{\fontsize{42pt}{48pt}\selectfont}
+\newcommand{\xiaochu}{\fontsize{36pt}{42pt}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{21.6pt}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{20pt}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{18pt}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{18pt}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{16pt}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{12.6pt}\selectfont}
+
+% 定义中文数字转换
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\zhnum{section}、}  % 使用\zhnum而不是\chinese
+  {0pt}
+  {}
+
+% 标题设置
+\title{\xiaochu\textbf{物理实验预习报告}}
+\author{}
+\date{}
+
+\begin{document}
+
+\vspace*{36pt} % 顶部空白
+
+% 居中填写区域
+\begin{center}
+    \includegraphics[width = 9cm]{head.png}
+    
+    \xiaochu\textbf{物理实验预习报告}
+    % 预留空白区域
+    \vspace{13pt}
+    \vspace{13pt}
+    \vspace{13pt}
+    \vspace{13pt}
+    
+\sanhao\textbf{实验名称：\underline{\makebox[8cm]{ 万用表的设计 }}} \\[10pt]
+    \sanhao\textbf{实验桌号：\underline{\makebox[8cm]{  }}} \\[10pt]
+    \sanhao\textbf{指导教师：\underline{\makebox[8cm]{  }}} \\[20pt]
+    
+    % 预留空白区域
+    \myspace{7}
+    
+   \sihao\textbf{班级：\underline{\makebox[6cm]{cc98}}} \\[10pt]
+    \sihao\textbf{姓名：\underline{\makebox[6cm]{Hydrofoil}}} \\[10pt]
+    \sihao\textbf{学号：\underline{\makebox[6cm]{324010}}} \\[30pt]
+    
+   \sihao\textbf{实验日期: \underline{\makebox[0.8cm] 2025 }年 \underline{\makebox[0.4cm]11}月\underline{\makebox[0.4cm]26}日  星期\underline{\makebox[0.6cm]三}上午}
+    
+    \vspace{18pt}
+    \sihao 浙江大学物理实验教学中心
+    
+\end{center}
+
+\newpage
+
+
+    \section{实验综述}
+    
+    \xiaosi （自述实验现象、实验原理和实验方法，不超过500字，5分）
+    
+    \myspace{0}
+
+    
+    \subsubsection*{改装多量程电流表原理：}
+
+    
+    要将磁电式电流计改装成量程为 I 的电流表，只需在电表表头两端并联一个分流电阻，其\(R_{s}=\frac{R_{g} I_{g}}{I - I_{g}}\)，并联不同的分流电阻可构成不同量程的电流表。
+    
+    如下图，\(\begin{cases}(R_{1}+R_{2})(I_{2}-I_{g})=R_{g}I_{g} \\ R_{1}(I_{1}-I_{g})=(R_{2}+R_{g})I_{g} \end{cases}\) 
+    可得到\(R_{1}\)、\(R_{2}\)的值，
+    最后用标准电流表对改装的电流表进行校正。
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{改装电流表1.png}
+            \label{fig:current_meter1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{改装电流表2.png}
+            \label{fig:current_meter2}
+        \end{subfigure}
+        \caption{改装电路表电路图}
+        \label{fig:图1}
+    \end{figure}
+
+    \subsubsection*{改装多量程电压表原理：}
+
+    要将磁电式电流计改装成量程为 U 的电压表，则电流计需串联一个分压电阻，
+    其\(R_{x}=\frac{U}{I_{g}}-R_{g}\)，串联不同的分压电阻可得到不同量程的电压表。
+    
+    如图，有：\( \begin{cases} R_{3}I_{g}=U_{1}-R_{g}I_{g} \\ R_{4}I_{g}=U_{2}-R_{g}I_{g} \end{cases} \)（若用 1 中改装的电流表代替表头，则记为 \(R_{g}'\)和\(I_{g}'\) ），
+    
+    
+    最后用标准伏特表对改装的电压表进行校正。
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=1.1\textwidth]{改装电压表1.png}
+            \label{fig:current_meter1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{改装电压表2.png}
+            \label{fig:current_meter2}
+        \end{subfigure}
+        \caption{改装电路表电路图}
+        \label{fig:图1}
+    \end{figure}
+
+    \subsubsection*{改装欧姆表原理：}
+    
+    \begin{wrapfigure}{r}{0.4\textwidth}
+        \vspace{-5pt} % 向上移动图片，减少图片上方的空白
+        \centering
+        \includegraphics[width=0.5\textwidth]{改装欧姆表.png}
+        \caption{欧姆表校准电路图}
+        \label{fig:ohm_meter_cal}
+    \end{wrapfigure}
+    
+    短接 a、b 两端，调节电阻 R 使电流计满刻度，此时总电阻为\(R_{0}=R_{g}+R'\)，
+    则当接入电阻\(R_{x}\)后，回路电流\(I_{x}=\frac{\varepsilon}{R_{0}+R_{x}}\)。
+    当\(R_{x}=R_{g}+R'\)时，\(I_{x}=\frac{I_{g}}{2}\)，此时电表指针指向刻度线中点，这时的电阻\(R_{x}\)称为欧姆表的中值电阻。
+    
+    由于\(I_{x}\)与\(R_{x}\)呈非线性关系，所以欧姆表刻度为非均匀刻度。
+    由于作为电源的电池也非恒定，所以欧姆表还需作零欧姆调整，通过可调电位器\(R_{6}\)实现。
+    
+    若要扩大欧姆表量程，可采用两种方法：一是电流计两端并联不同的分流电阻，二是可提高电源电压。
+
+    \subsubsection*{设计多量程电流表并校准：}
+
+    实验室提供 1mA 量程电流计，内阻已标注。若要重新测量电流计内阻改装电流表实验值，可采用替代法测量，即：先将电流计与标准电流表同时串接在测量回路中，调整回路电流到合适大小 I，然后用电阻箱将电流计换下，改变阻值使 I 不变，此时电阻箱的阻值即为电流计的内阻。
+
+    \begin{enumerate}
+        \item 用满偏法和替代法测量表头的\(I_{g}\)、\(R_{g}\);
+        \item 计算多量程电流表的分流电阻；
+        \item 校准与记录，计算\(\Delta I\)，确定\(k=\frac{\Delta I_{max}}{\text{量程}}×100\%\)。
+    \end{enumerate}
+
+    \subsubsection*{设计多量程电压表并校准：}
+
+    \begin{enumerate}
+        \item 计算多量程电压表的分压电阻；
+        \item 校准与记录，记录\(\Delta V\)与 U，绘制校准曲线，确定\(k=\frac{\Delta V_{max}}{\text{量程}}×100\%\)。
+    \end{enumerate}
+
+    \subsubsection*{设计欧姆表并制作欧姆档刻度曲线：}
+
+    \(I_{x}\)与\(R_{x}\)成非线性关系，记录多组\(R_{x}\)及\(I_{x}\)的数据，用此方法，可在电流计面板上刻刻度，以显示不同的阻值\(R_{x}\)，且刻度为非均匀刻度。另外，实际作为电源的电池非恒定，故还需作零欧姆调整。
+
+
+    \section{实验重点}
+    
+    \xiaosi（简述本实验的学习重点，不超过100字，3分）
+
+    \begin{enumerate}
+        \item 了解指针式万用表测量电流、电压以及电阻的基本原理；
+        \item 掌握多量程电流表、电压表和万用表的设计方法。
+    \end{enumerate}
+    
+    \section{实验难点}
+    
+    \xiaosi（简述本实验的实现难点，不超过100字，2分）
+
+    \begin{enumerate}
+        \item 计算分流、分压电阻需精准，数值偏差会影响电表量程准确性；
+        \item 校准电表时，要控制电流 / 电压稳定，绘制校准曲线需多次精准记录数据；
+        \item 欧姆表刻度非线性，制作刻度曲线需处理多组数据，且电池需频繁零欧姆调整；
+        \item 测量电流计内阻时，替代法操作需保证回路电流不变，难度较高。
+    \end{enumerate}
+
+
+
+\newpage
+
+\sihao\textbf{注意事项：}
+\xiaosi
+\begin{enumerate}
+    \item  用 PDF 格式上传“实验报告”，文件名：学生姓名+学号+实验名称+周次。
+    \item  “实验报告”必须递交在“学在浙大”的本课程的对应实验项目的“作业”模块内。
+    \item  “实验报告”成绩必须在“浙江大学物理实验教学中心网站”-“选课系统”内查询。
+    \item 教学评价必须在“浙江大学物理实验教学中心网站”-“选课系统”内进行，学生必须进行教学评价，才能看到实验报告成绩，教学评价必须在本次实验结束后 3 天内进行。
+\end{enumerate}
+
+\vspace{1cm}
+\xiaosi\centering \textbf{浙江大学物理实验教学中心制}
+
+\end{document}

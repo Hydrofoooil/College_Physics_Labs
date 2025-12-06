@@ -1,0 +1,42 @@
+# LaTeX编译中间文件
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.xdv
+
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.out
+**/*.synctex.gz
+**/*.xdv
+
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+.venv/*
+venv/
+env/
+ENV/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE相关
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+

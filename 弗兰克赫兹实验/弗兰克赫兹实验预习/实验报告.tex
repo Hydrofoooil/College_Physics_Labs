@@ -1,0 +1,209 @@
+\documentclass[10pt,a4paper]{ctexart}
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}    % 提供方程环境
+\usepackage{amssymb} 
+\usepackage{physics}    % 简化向量、微分算子语法
+\newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}} %自定义空一行
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{booktabs} % 添加 booktabs 宏包
+\usepackage{float}
+\pagestyle{fancy}
+\fancyhf{}  % 清除所有页眉页脚
+\fancyfoot[C]{\thepage}  % 在页脚中央设置页码
+\renewcommand{\headrulewidth}{0pt}  % 去掉页眉横线
+\renewcommand{\footrulewidth}{0pt}  % 去掉页脚横线
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{titlesec}
+
+% 重新定义section格式
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\chinese{section}、}
+  {0pt}
+  {}
+
+% 给出常用字号的自定义指令
+\newcommand{\chuhao}{\fontsize{42pt}{48pt}\selectfont}
+\newcommand{\xiaochu}{\fontsize{36pt}{42pt}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{21.6pt}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{20pt}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{18pt}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{18pt}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{16pt}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{12.6pt}\selectfont}
+
+% 定义中文数字转换
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\zhnum{section}、}  % 使用\zhnum而不是\chinese
+  {0pt}
+  {}
+
+% 标题设置
+\title{\xiaochu\textbf{物理实验预习报告}}
+\author{}
+\date{}
+
+\begin{document}
+
+\vspace*{36pt} % 顶部空白
+
+% 居中填写区域
+\begin{center}
+    \includegraphics[width = 9cm]{figures/head.png}
+    
+    \xiaochu\textbf{物理实验预习报告}
+    % 预留空白区域
+    \vspace{13pt}
+    \vspace{13pt}
+    \vspace{13pt}
+    \vspace{13pt}
+    
+    \sanhao\textbf{实验名称：\underline{\makebox[8cm]{ 弗兰克赫兹实验 }}} \\[10pt]
+    \sanhao\textbf{实验桌号：\underline{\makebox[8cm]{  }}} \\[10pt]
+    \sanhao\textbf{指导教师：\underline{\makebox[8cm]{ }}} \\[20pt]
+    
+    % 预留空白区域
+    \myspace{7}
+    
+   \sihao\textbf{班级：\underline{\makebox[6cm]{cc98}}} \\[10pt]
+    \sihao\textbf{姓名：\underline{\makebox[6cm]{Hydrofoil}}} \\[10pt]
+    \sihao\textbf{学号：\underline{\makebox[6cm]{324010}}} \\[30pt]
+    
+    \sihao\textbf{实验日期: \underline{\makebox[0.8cm]{2025}}年 \underline{\makebox[0.4cm]{12}}月\underline{\makebox[0.4cm]{17}}日  星期\underline{\makebox[0.6cm]{三}}上午}
+    
+    \vspace{18pt}
+    \sihao 浙江大学物理实验教学中心
+    
+\end{center}
+
+\newpage
+
+
+    \section{实验综述}
+    
+    \xiaosi （自述实验现象、实验原理和实验方法，不超过500字，5分）
+    
+  \begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=7cm]{figures/图片1.png}
+    \caption{弗兰克-赫兹实验原理图}
+    \label{fig:principle}
+    \end{wrapfigure}
+
+    \
+
+    \subsection*{弗兰克赫兹实验原理:}
+
+    弗兰克-赫兹实验是通过弗兰克-赫兹（弗兰克-赫兹）管来实现的，其实验原理图如图1所示。    
+
+    实验中弗兰克-赫兹管是一只充有氩原子气体的四极管。在灯丝 $F_1$、$F_2$、阴极 K、第一栅极 $G_1$、第二栅极 $G_2$ 和板极 A 间分别加有灯丝电压 $U_{F1F2}$ ($U_1$)、栅极电压 $U_{G1K}$ ($U_2$)、加速电压 $U_{G2K}$ ($U_3$) 和拒斥电压 $U_{G2A}$ ($U_4$)。
+
+$U_{F1F2}$ 用于加热灯丝使其发射热电子，$U_{G1K}$ 用于控制管内电子流的大小以抵消阴极附近电子云形成的负电势的影响，它的变化将引起空间电荷的变化，$U_{G2K}$ 和 $U_{G2A}$ 空间电势分布如图 1-2 所示。
+
+电子由热阴极发射出来进入 $\text{KG}_2$ 空间后，将受到加速电压 $U_{G2K}$ 的作用而穿过栅极进入 $G_2\text{A}$ 空间，进入此空间的电子又将受到反向拒斥电压 $U_{G2A}$ 的作用。如果加速后电子的能量大于等于 $eU_{G2A}$ 时，它将到达板极 A，形成板流，由微电流放大器 PA 测出。
+
+显然，在没有其它情况发生的条件下，随加速电压 $U_{G2K}$ 的增加，到达板极的电子越多，电流就越大。但实验结果并不完全如此，板流 $I_A$ 与加速电压 $U_{G2K}$ 的关系曲线如图2所示。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{figures/图片2.png}
+    \caption{弗兰克-赫兹实验原理图}
+    \label{fig:principle2}
+    \end{figure}
+
+    
+现对图 2 中的曲线进行分析。当加速电压 $U_{G2K}$ 逐渐增加时，电子在 $\text{KG}_2$ 空间被加速，而获得越来越大的能量。在初始阶段，由于电压相对较低，电子的能量较小，即使在运动过程中与氩原子相碰撞，也只能是弹性碰撞，几乎没有能量交换，$U_{G2K}$ 从零逐渐增加，空间电荷区域减弱，导致阴极发射电子流增加，而且电子速度增加，所以板流 $I_A$ 随加速电压 $U_{G2K}$ 的增加而增大，如图 2 中 oa 段。
+
+当电子的能量随 $U_{G2K}$ 的增加达到或超过氩原子的临界能量，即 $U_{G2K}$ 达到氩原子的第一激发电势 $U_0$ 时，电子与氩原子将发生非弹性碰撞，实现能量交换，使氩原子跃迁到第一激发状态，而电子能量减小。此种电子即使穿过第二栅极也不能克服反向拒斥电压 $U_{G2A}$ 所形成的电场而被排斥折回第二栅极。此时板流 $I_A$ 将明显减小，如图 2 中 ab 段。
+
+随加速电压 $U_{G2K}$ 的增加，在碰撞中失去大部分能量的电子，其能量又将随之增加，可以克服反向拒斥电场而到达板极 A，这时，板流 $I_A$ 又开始上升，如图 2 中 bc 段。
+
+以后，当加速电子达到氩原子的第一激发电势 $U_0$ 时，被加速电子在向第二栅极 $G_2$ 运动过程中都会与氩原子发生非弹性碰撞，板流 $I_A$ 都会下降，形成有规则的起伏变化（有峰和谷）的 $I_A \text{-} U_{G2K}$ 曲线，即图 2 所示的曲线。而与各次板流 $I_A$ 下降到最低点相对应的相邻加速电压电势差 $U_{m+1}-U_m$ 就是氩原子的第一激发电势 $U_0$。
+      
+    
+    \subsection*{实验操作:}
+
+    首先按照参考接线图进行接线，然后进行预热和调零。
+    
+    \textbf{自动测量：}
+
+将示波器的 CH1 通道设置：$200\text{mV}/\text{格}$，$500\mu\text{s}/\text{格}$，外触发通道设置：触发类型为边沿触发。触发源为外触发输入通道，下降沿触发。触发方式为自动。
+    
+确认“电源二”实验仪处于自动测量方式状态，如果不是，按一下“手动/自动”测量按键，将测量方式切换到自动测量方式，这时“自动”指示灯亮。然后按下“确认”按键，启动自动测量。在示波器上观测波浪式爬坡曲线的形成过程。
+    
+约 4 分钟之后，自动测量过程结束，观测示波器上 $I_A \text{-} U_{G2K}$ 曲线。
+    
+    自动测量结束后，“电源二”前面板的“峰值”指示灯亮，通过向上查询按键“$\blacktriangle$”或向下查询按键“$\blacktriangledown$”查询 $U_{G2K}$ 和 $I_A$ 的“峰值”。将峰值序号 $n$、第二栅压 $U_{G2K}$ 值记录在中。用逐差法计算氩原子的第一激发电势 $U_0$。
+    
+    自动测量做 5 次实验，分别得到第一激发电势 $U_1$、$U_2$、$U_3$、$U_4$、$U_5$，然后取 5 次测量的平均值作为氩原子的第一激发电势 $U_0$。
+
+    \textbf{手动测量：}
+
+    确认“电源二”实验仪处于手动测量方式状态，如果不是，按一下“手动/自动”测
+量按键，将测量方式切换到手动测量方式，这时“手动”指示灯亮。
+
+缓慢调节第二栅压“$U_{G2K}$ 调节”电位器，电压 $U_{G2K}$ 每隔 0.5V 读一次数，待电流稳定大
+约 4 秒钟，读出相应微电流显示值 $I_A$。
+
+为把峰值和谷值测准，在峰谷值附近可多测几组 $U_{G2K}$ 和 $I_A$ 值，将实验所得 $U_{G2K}$、$I_A$ 值记录
+在表中。
+
+根据手动测量记录的实验数据，在坐标纸上用作图法测绘 $I_A \text{-} U_{G2K}$ 曲线，并对所得曲线进行分析，得出结论。分析改变灯丝电压 $U_{F1F2}$、第一栅压 $U_{G1K}$、拒斥电压 $U_{G2A}$ 对实验结果的影响。
+
+根据 $I_A \text{-} U_{G2K}$ 曲线，找出各峰值电流对应的第二栅压 $U_{G2K}$ 值，将峰值序号 $n$、第二栅压 $U_{G2K}$ 值记录在表 1-4 中。用逐差法计算氩原子的第一激发电势 $U_0$。
+  
+    
+    \section{实验重点}
+
+    \xiaosi（简述本实验的学习重点，不超过100字，3分）
+
+
+ \begin{enumerate}   
+        \item 学习关于原子碰撞激发和测量的方法；
+        \item 测定氩原子的第一激发电势；
+        \item 通过对氩原子激发电势的测量，证实原子能级的存在。
+
+    \end{enumerate} 
+    
+    \section{实验难点}
+    
+    \xiaosi（简述本实验的实现难点，不超过100字，2分）
+
+    \begin{enumerate}    
+        \item 最佳工作点的确定（多参数调节）：实验涉及灯丝电压、控制栅压、拒斥电压等多个参数。若参数配合不当（如拒斥电压过大或过小），会导致板极电流太微弱、峰谷不明显或曲线饱和，难以观察到典型的周期性起伏。
+        \item 微弱电流的测量：板极电流通常在微安（$\mu A$）甚至纳安（$nA$）级别，信号非常微弱，对测量仪器的灵敏度要求高，且极易受到外界电磁干扰和仪器零点漂移的影响。
+        \item 接触电势差的修正：由于阴极、栅极和板极的材料不同，电极之间存在接触电势差。这会导致测量出的第一个峰值电压与理论的第一激发电势存在偏差（通常第一峰位偏大），在数据处理时需要进行修正或理解其物理成因。
+        \item 温度控制的敏感性：灯丝温度（灯丝电压）直接影响热电子发射密度，需在保证发射足够电子和防止空间电荷效应之间找到平衡。
+    \end{enumerate}  \
+
+
+
+\newpage
+
+\sihao\textbf{注意事项：}
+\xiaosi
+\begin{enumerate}
+    \item  用 PDF 格式上传“实验报告”，文件名：学生姓名+学号+实验名称+周次。
+    \item  “实验报告”必须递交在“学在浙大”的本课程的对应实验项目的“作业”模块内。
+    \item  “实验报告”成绩必须在“浙江大学物理实验教学中心网站”-“选课系统”内查询。
+    \item 教学评价必须在“浙江大学物理实验教学中心网站”-“选课系统”内进行，学生必须进行教学评价，才能看到实验报告成绩，教学评价必须在本次实验结束后 3 天内进行。
+\end{enumerate}
+
+\vspace{1cm}
+\xiaosi\centering \textbf{浙江大学物理实验教学中心制}
+
+\end{document}
